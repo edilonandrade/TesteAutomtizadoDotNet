@@ -1,0 +1,12 @@
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\bin\Debug\TesteAutomatizado.exe.config
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\bin\Debug\TesteAutomatizado.exe
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\bin\Debug\TesteAutomatizado.pdb
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\bin\Debug\WebDriver.dll
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\bin\Debug\WebDriver.Support.dll
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\bin\Debug\WebDriver.xml
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\bin\Debug\WebDriver.Support.xml
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.csprojAssemblyReference.cache
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.csproj.CoreCompileInputs.cache
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.csproj.CopyComplete
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.exe
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizado\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.pdb
