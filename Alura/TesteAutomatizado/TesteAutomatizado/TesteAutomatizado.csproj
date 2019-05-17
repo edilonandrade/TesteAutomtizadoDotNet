@@ -72,9 +72,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NovoUsuarioPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testes\UsuarioSystemTest.cs" />
+    <Compile Include="UsuarioPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

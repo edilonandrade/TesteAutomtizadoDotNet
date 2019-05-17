@@ -9,123 +9,76 @@ namespace TesteAutomatizado.testes
     class UsuarioSystemTest
     {
         private IWebDriver firefox;
+        private UsuarioPage usuario;
 
         [SetUp]
         public void AntesDosTestes()
         {
             firefox = new FirefoxDriver();
-            firefox.Navigate().GoToUrl("http://localhost:8080/usuarios");
-
-            IWebElement linkNovoUsuario = firefox.FindElement(By.LinkText("Novo Usuário"));
-            linkNovoUsuario.Click();
+            usuario = new UsuarioPage(firefox);
 
         }
 
         [Test]
         public void DeveCadastrarUsuario() {
-            //Navegar para a url desejada
-            //firefox.Navigate().GoToUrl("http://localhost:8080/usuarios/new");
+            usuario.visita();
+            usuario.novo().cadastra("Renan", "renan.saggio@gmail.com");
+            System.Threading.Thread.Sleep(2000);
+            bool existeNaPagina = usuario.existeNaListagem("Renan", "renan.saggio@gmail.com");
+            Assert.IsTrue(existeNaPagina);
 
-            //procurar o elemento desejado, nesse caso o nome e o e-mail e o botão salva
-            IWebElement campoNome = firefox.FindElement(By.Name("usuario.nome"));
-            IWebElement campoEmail = firefox.FindElement(By.Name("usuario.email"));
+            usuario.Excluir();
 
-            //Preencher os campos desejados
-            campoNome.SendKeys("Renan");
-            campoEmail.SendKeys("renan.saggio@caelum.com.br");
+            System.Threading.Thread.Sleep(2000);
 
-            ///Salvar as informações
-            ///
-            IWebElement btnSalvar = firefox.FindElement(By.Id("btnSalvar"));
-            btnSalvar.Click();
+            bool naoExisteMensagem = usuario.naoExisteMensagem("Renan", "renan.saggio@gmail.com");
 
-            //Enviar o formulário
-            //campoNome.Submit();
-
-            //Declarar váriaveis boolenas para verificar se foi cadastrada
-            bool achouNome = firefox.PageSource.Contains("Renan");
-            bool achcouEmail = firefox.PageSource.Contains("renan.saggio@caelum.com.br");
-            
-            //Incluir TextFixture e Test como parametros
-
-            //Fazer os asserts com o NUnit
-            Assert.IsTrue(achouNome);
-            Assert.IsTrue(achcouEmail);
+            Assert.IsTrue(naoExisteMensagem);
         }
 
         [Test]
         public void DeveCadastrarUsuarioAdriano()
         {
-           //Navegar para a url desejada
-           // firefox.Navigate().GoToUrl("http://localhost:8080/usuarios/new");
-
-            //procurar o elemento desejado, nesse caso o nome e o e-mail e o botão salva
-            IWebElement campoNome = firefox.FindElement(By.Name("usuario.nome"));
-            IWebElement campoEmail = firefox.FindElement(By.Name("usuario.email"));
-
             string strNome = "Adriano Xavier";
             string strEmail = "axavier@empresa.com.br";
 
-            //Preencher os campos desejados
-            campoNome.SendKeys(strNome);
-            campoEmail.SendKeys(strEmail);
+            usuario.visita();
+            usuario.novo().cadastra(strNome, strEmail);
 
-            ///Salvar as informações
-            ///
-            IWebElement btnSalvar = firefox.FindElement(By.Id("btnSalvar"));
-            btnSalvar.Click();
+            System.Threading.Thread.Sleep(2000);
 
-            //Enviar o formulário
-            //campoNome.Submit();
 
-            //Declarar váriaveis boolenas para verificar se foi cadastrada
-            bool achouNome = firefox.PageSource.Contains(strNome);
-            bool achcouEmail = firefox.PageSource.Contains(strEmail);
-
-            //Incluir TextFixture e Test como parametros
-
-            //Fazer os asserts com o NUnit
-            Assert.IsTrue(achouNome);
-            Assert.IsTrue(achcouEmail);
+            bool existeNaPagina = usuario.existeNaListagem(strNome, strEmail);
+            Assert.IsTrue(existeNaPagina);
         }
 
         [Test]
         public void DeveExibirMensagemQuandoUsuarioNaoInformado()
         {
-            //Navegar para a url desejada
-            firefox.Navigate().GoToUrl("http://localhost:8080/usuarios/new");
-            
-            ///Salvar as informações
-            IWebElement btnSalvar = firefox.FindElement(By.Id("btnSalvar"));
-            btnSalvar.Click();
+            usuario.visita();
+            usuario.novo().cadastra(string.Empty, "vazio@provedor.com");
 
-            //Declarar váriaveis boolenas para verificar se foi cadastrada
-            bool mensagemNome = firefox.PageSource.Contains("Nome obrigatorio!");
-            
-            //Incluir TextFixture e Test como parametros
+            System.Threading.Thread.Sleep(2000);
 
-            //Fazer os asserts com o NUnit
+            bool mensagemNome = usuario.existeAMensagem("Nome obrigatorio!");
+            
             Assert.IsTrue(mensagemNome);
-            //Assert.IsTrue(achcouEmail);
+
+            
+            
         }
 
         [Test]
         public void DeveExibirMensagemQuandoUsuarioEEmailNaoInformado()
         {
-           //Navegar para a url desejada
-            //firefox.Navigate().GoToUrl("http://localhost:8080/usuarios/new");
+            usuario.visita();
+            usuario.novo().cadastra(string.Empty, string.Empty);
 
-            ///Salvar as informações
-            IWebElement btnSalvar = firefox.FindElement(By.Id("btnSalvar"));
-            btnSalvar.Click();
+            System.Threading.Thread.Sleep(2000);
+            
+            bool mensagemNome = usuario.existeAMensagem("Nome obrigatorio!");
+            bool mensagemEmail = usuario.existeAMensagem("E-mail obrigatorio!");
 
-            //Declarar váriaveis boolenas para verificar se foi cadastrada
-            bool mensagemNome = firefox.PageSource.Contains("Nome obrigatorio!");
-            bool mensagemEmail = firefox.PageSource.Contains("E-mail obrigatorio!");
-
-            //Incluir TextFixture e Test como parametros
-
-            //Fazer os asserts com o NUnit
             Assert.IsTrue(mensagemNome);
             Assert.IsTrue(mensagemEmail);
         }
