@@ -72,7 +72,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NovoUsuarioPage.cs" />
+    <Compile Include="LeiloesPage.cs" />
+    <Compile Include="LeiloesSystemTest.cs" />
+    <Compile Include="NovoLeilaoPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testes\UsuarioSystemTest.cs" />
