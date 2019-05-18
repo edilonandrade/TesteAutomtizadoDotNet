@@ -39,3 +39,4 @@ C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizadoDotN
 C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizadoDotNet\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.csproj.CopyComplete
 C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizadoDotNet\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.dll
 C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizadoDotNet\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.pdb
+C:\Users\Inmetrics\Documents\Pessoal\Estudo\Desenvolvimento\TesteAutomtizadoDotNet\fontes\Alura\TesteAutomatizado\TesteAutomatizado\obj\Debug\TesteAutomatizado.csprojAssemblyReference.cache

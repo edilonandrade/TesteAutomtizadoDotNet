@@ -22,20 +22,42 @@ namespace TesteAutomatizado
             driver.Navigate().GoToUrl("http://localhost:8080/usuarios");
         }
 
+        public void limpa()
+        {
+            driver.Navigate().GoToUrl("http://localhost:8080/apenas-teste/limpa");
+        }
+
         public NovoUsuarioPage novo()
         {
             driver.FindElement(By.LinkText("Novo Usuário")).Click();
             return new NovoUsuarioPage(driver);
         }
 
-        public void Excluir()
+        public EidtarUsuarioPage editar()
         {
-            int posicao = 1; //queremos o 1º botão
+            driver.FindElement(By.LinkText("editar")).Click();
+            return new EidtarUsuarioPage(driver);
+        }
+
+        public void Excluir(int posicao)
+        {
+           
             driver.FindElements(By.TagName("button"))[posicao - 1].Click();
 
             //pega o alert que está aberto
+           
+            System.Threading.Thread.Sleep(1000);
             IAlert alert = driver.SwitchTo().Alert();
             alert.Accept();
+        }
+
+        public void ExcluirUsuarios()
+        {
+            while (driver.PageSource.Contains("excluir"))
+            {
+                Excluir(1);
+                System.Threading.Thread.Sleep(2000);
+            }
         }
 
         public bool existeNaListagem(string nome, string email)

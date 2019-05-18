@@ -20,14 +20,17 @@ namespace TesteAutomatizado.testes
         }
 
         [Test]
-        public void DeveCadastrarUsuario() {
+        public void DeveCadastrarUsuario()
+        {
+            usuario.limpa();
+            System.Threading.Thread.Sleep(3000);
             usuario.visita();
             usuario.novo().cadastra("Renan", "renan.saggio@gmail.com");
             System.Threading.Thread.Sleep(2000);
             bool existeNaPagina = usuario.existeNaListagem("Renan", "renan.saggio@gmail.com");
             Assert.IsTrue(existeNaPagina);
 
-            usuario.Excluir();
+            usuario.Excluir(1);
 
             System.Threading.Thread.Sleep(2000);
 
@@ -61,11 +64,11 @@ namespace TesteAutomatizado.testes
             System.Threading.Thread.Sleep(2000);
 
             bool mensagemNome = usuario.existeAMensagem("Nome obrigatorio!");
-            
+
             Assert.IsTrue(mensagemNome);
 
-            
-            
+
+
         }
 
         [Test]
@@ -75,7 +78,7 @@ namespace TesteAutomatizado.testes
             usuario.novo().cadastra(string.Empty, string.Empty);
 
             System.Threading.Thread.Sleep(2000);
-            
+
             bool mensagemNome = usuario.existeAMensagem("Nome obrigatorio!");
             bool mensagemEmail = usuario.existeAMensagem("E-mail obrigatorio!");
 
@@ -89,5 +92,23 @@ namespace TesteAutomatizado.testes
             //Fechar o drive
             firefox.Close();
         }
+
+        [Test]
+        public void DeveEditarUmUsuario()
+        {
+            usuario.visita();
+            
+            System.Threading.Thread.Sleep(1000);
+
+            usuario.editar().edita("Rafael", "rafael@gmail.com");
+
+            System.Threading.Thread.Sleep(2000);
+
+            bool existeNaPagina = usuario.existeNaListagem("Rafael", "rafael@gmail.com");
+
+            Assert.IsTrue(existeNaPagina);
+
+        }
     }
+
 }

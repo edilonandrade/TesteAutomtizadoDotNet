@@ -22,6 +22,11 @@ namespace TesteAutomatizado
             driver.Navigate().GoToUrl("http://localhost:8080/leiloes");
         }
 
+        public void limpa()
+        {
+            driver.Navigate().GoToUrl("http://localhost:8080/apenas-teste/limpa");
+        }
+
         public NovoLeilaoPage novo()
         {
             driver.FindElement(By.LinkText("Novo Leilão")).Click();
@@ -35,6 +40,11 @@ namespace TesteAutomatizado
                 driver.PageSource.Contains(usuario) &&
                 driver.PageSource.Contains(usado ? "Sim" : "Não");
 
+        }
+
+        public bool existeMensagem(string mensagem)
+        {
+            return driver.PageSource.Contains(mensagem);
         }
     }
 }
