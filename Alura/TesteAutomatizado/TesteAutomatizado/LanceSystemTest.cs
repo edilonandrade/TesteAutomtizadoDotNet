@@ -21,29 +21,28 @@ namespace TesteAutomatizado
             driver = new FirefoxDriver();
             leiloes = new LeiloesPage(driver);
 
-            UsuarioPage usuario = new UsuarioPage(driver);
-            usuario.limpa();
-            usuario.visita();
+            driver.Navigate().GoToUrl(new URLDaAplicacao().GetUrlBase() + "/apenas-teste/limpa");
 
-            usuario.novo().cadastra("Renan Saggio", "renan@caelum.com.br");
-            System.Threading.Thread.Sleep(2000);
-            usuario.novo().cadastra("Paulo Henrique", "paulo@caelum.com.br");
-            System.Threading.Thread.Sleep(2000);
-            leiloes.visita();
-            leiloes.novo().preenche("Geladeira", 250, "Renan Saggio", true);
-            System.Threading.Thread.Sleep(2000);
+            new CriadorDeCenarios(driver)
+                 .umUsuario("Paulo Henrique", "paulo@henrique.com")
+                 .umUsuario("José Alberto", "jose@alberto.com")
+                 .umLeilao("Paulo Henrique", "Geladeira", 100, false);
         }
 
         [Test]
         public void DeveDarLance()
         {
-            leiloes.visita();
-
-            DetalhesDoLeilaoPage lances = leiloes.detalhes(1);
+           DetalhesDoLeilaoPage lances = leiloes.detalhes(1);
 
             lances.lance("Paulo Henrique", 150);
 
             Assert.IsTrue(lances.existeLance("Paulo Henrique", 150));
+        }
+
+        [TearDown]
+        public void finaliza()
+        {
+            driver.Close();
         }
     }
 }

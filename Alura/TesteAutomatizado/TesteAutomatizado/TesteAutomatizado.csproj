@@ -72,6 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CriadorDeCenarios.cs" />
     <Compile Include="DetalhesDoLeilaoPage.cs" />
     <Compile Include="EidtarUsuarioPage.cs" />
     <Compile Include="LanceSystemTest.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testes\UsuarioSystemTest.cs" />
+    <Compile Include="URLDaAplicacao.cs" />
     <Compile Include="UsuarioPage.cs" />
   </ItemGroup>
   <ItemGroup>

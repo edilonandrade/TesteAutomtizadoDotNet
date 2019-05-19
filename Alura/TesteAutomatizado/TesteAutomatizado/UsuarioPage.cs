@@ -19,12 +19,12 @@ namespace TesteAutomatizado
 
         public void visita()
         {
-            driver.Navigate().GoToUrl("http://localhost:8080/usuarios");
+            driver.Navigate().GoToUrl(new URLDaAplicacao().GetUrlBase() + "/usuarios");
         }
 
         public void limpa()
         {
-            driver.Navigate().GoToUrl("http://localhost:8080/apenas-teste/limpa");
+            driver.Navigate().GoToUrl(new URLDaAplicacao().GetUrlBase() + "/apenas-teste/limpa");
         }
 
         public NovoUsuarioPage novo()
