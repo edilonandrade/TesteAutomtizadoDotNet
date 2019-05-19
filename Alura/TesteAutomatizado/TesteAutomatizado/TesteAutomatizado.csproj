@@ -72,7 +72,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetalhesDoLeilaoPage.cs" />
     <Compile Include="EidtarUsuarioPage.cs" />
+    <Compile Include="LanceSystemTest.cs" />
     <Compile Include="LeiloesPage.cs" />
     <Compile Include="LeiloesSystemTest.cs" />
     <Compile Include="NovoLeilaoPage.cs" />

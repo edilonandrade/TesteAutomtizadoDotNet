@@ -46,5 +46,11 @@ namespace TesteAutomatizado
         {
             return driver.PageSource.Contains(mensagem);
         }
+
+        public DetalhesDoLeilaoPage detalhes(int posicao)
+        {
+            driver.FindElements(By.LinkText("exibir"))[posicao - 1].Click();
+            return new DetalhesDoLeilaoPage(driver);
+        }
     }
 }

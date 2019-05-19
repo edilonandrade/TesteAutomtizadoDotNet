@@ -49,5 +49,7 @@ namespace TesteAutomatizado
             Assert.IsTrue(leiloes.existeMensagem("Nome obrigatorio!") &&
                 leiloes.existeMensagem("Valor inicial deve ser maior que zero!"));
         }
+
+        
     }
 }
